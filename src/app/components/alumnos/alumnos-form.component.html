@@ -1,0 +1,92 @@
+<div class="card bg-light mb-3">
+  <div class="card-header">{{ titulo }}</div>
+  <div class="card-body">
+    <button class="btn btn-secondary my-2" routerLink="/alumnos">Volver</button>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          class="form-control"
+          [(ngModel)]="alumno.nombres"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <label for="apaterno">Apellido paterno</label>
+        <input
+          type="text"
+          name="apaterno"
+          class="form-control"
+          [(ngModel)]="alumno.apellidoPaterno"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <label for="amaterno">Apellido materno</label>
+        <input
+          type="text"
+          name="amaterno"
+          class="form-control"
+          [(ngModel)]="alumno.apellidoMaterno"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <label for="fnac">Fecha de nacimiento</label><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            name = "fnac"
+            [(ngModel)]="alumno.fechaDeNacimiento"
+          />
+          <mat-hint>MM/DD/AAAA</mat-hint>
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group my-2">
+        <label for="sexo">Sexo</label>
+        <input
+          type="text"
+          name="sexo"
+          class="form-control"
+          [(ngModel)]="alumno.sexo"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <label for="curp">Curp</label>
+        <input
+          type="text"
+          name="curp"
+          class="form-control"
+          [(ngModel)]="alumno.curp"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <label for="matricula">Matrícula</label>
+        <input
+          type="text"
+          name="matricula"
+          class="form-control"
+          [(ngModel)]="alumno.matricula"
+        />
+      </div>
+
+      <div class="form-group my-2">
+        <button type="button" class="btn btn-primary" (click)="registrar()">
+          Crear
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

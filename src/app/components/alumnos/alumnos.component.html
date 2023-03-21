@@ -1,0 +1,34 @@
+<div class="card bg-light mb-3">
+  <div class="card-header">{{ titulo }}</div>
+  <div class="card-body">
+    <button class="btn btn-primary my-2" routerLink="/alumnos/form">Crear</button>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Apellido P</th>
+          <th>Apellido M</th>
+          <th>Matrícula</th>
+          <th>Curp</th>
+          <th>Fecha de nacimiento</th>
+          <th>Sexo</th>
+          <th>Registrado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let alumno of alumnos">
+          <td>{{ alumno.id }}</td>
+          <td>{{ alumno.nombres }}</td>
+          <td>{{ alumno.apellidoPaterno }}</td>
+          <td>{{ alumno.apellidoMaterno }}</td>
+          <td>{{ alumno.matricula }}</td>
+          <td>{{ alumno.curp }}</td>
+          <td>{{ alumno.fechaDeNacimiento | date: 'dd/MM/yyyy'}}</td>
+          <td>{{ alumno.sexo }}</td>
+          <td>{{ alumno.fechaDeRegistro | date: 'dd/MM/yyyy'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

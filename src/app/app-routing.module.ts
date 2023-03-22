@@ -6,7 +6,8 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: "alumnos"},
   {path: 'alumnos', component: AlumnosComponent},
-  {path: 'alumnos/form', component: AlumnosFormComponent}
+  {path: 'alumnos/form', component: AlumnosFormComponent},
+  {path: 'alumnos/form/:id', component: AlumnosFormComponent}
 ];
 
 @NgModule({

@@ -2,7 +2,11 @@
   <div class="card-header">{{ titulo }}</div>
   <div class="card-body">
     <button class="btn btn-primary my-2" routerLink="/alumnos/form">Crear</button>
-    <table class="table table-hover table-striped">
+    <div class="alert alert-info" *ngIf="alumnos?.length===0">
+        No hay alumnos en la base de datos
+    </div>
+
+    <table class="table table-hover table-striped" *ngIf="alumnos?.length > 0">
       <thead>
         <tr>
           <th>Id</th>
@@ -14,6 +18,8 @@
           <th>Fecha de nacimiento</th>
           <th>Sexo</th>
           <th>Registrado</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +33,8 @@
           <td>{{ alumno.fechaDeNacimiento | date: 'dd/MM/yyyy'}}</td>
           <td>{{ alumno.sexo }}</td>
           <td>{{ alumno.fechaDeRegistro | date: 'dd/MM/yyyy'}}</td>
+          <td><button class="btn btn-secondary btn-sm" [routerLink]="['/alumnos/form/', alumno.id]" >Editar</button></td>
+          <td><button class="btn btn-danger btn-sm" (click) = "eliminar(alumno)">Eliminar</button></td>
         </tr>
       </tbody>
     </table>
